@@ -1,7 +1,6 @@
 puts "The students of my cohort at Makers academy"
 puts "-------------------------------------------"
-student_count = 19
-# let's put all students into an array:
+# let's put all students into an array of hashes:
 students = [
 {:name => "Steve Musgrave", :cohort => :march},
 {:name => "Sroop Sunar", :cohort => :march},
