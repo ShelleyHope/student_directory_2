@@ -13,7 +13,9 @@ students = [
 puts "The Students of my cohort at Makers Academy"
 puts "-------------------------------------------"	
 
-puts students[0..5]
+students.each do |student|
+	puts student
+end
 
 puts "Overall, we have #{students.length} great students"
 
