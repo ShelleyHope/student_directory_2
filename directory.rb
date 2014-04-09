@@ -1,13 +1,19 @@
 student_count = 6
 
+#lets put all the students into an array:
+students = [
+"David Beckham",
+"David Tennant",
+"Vincent Gallo",
+"Colin Firth",
+"Johnny Depp",
+"Dan Ariely"
+]
+
 puts "The Students of my cohort at Makers Academy"
 puts "-------------------------------------------"	
-puts "David Beckham"
-puts "David Tennant"
-puts "Vincent Gallo"
-puts "Colin Firth"
-puts "Johnny Depp"
-puts "Dan Ariely"
 
-puts "Overall, we have #{student_count} great students"
+puts students[0..5]
+
+puts "Overall, we have #{students.length} great students"
 
