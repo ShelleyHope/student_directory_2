@@ -2,20 +2,32 @@ student_count = 6
 
 #lets put all the students into an array:
 students = [
-"David Beckham",
-"David Tennant",
-"Vincent Gallo",
-"Colin Firth",
-"Johnny Depp",
-"Dan Ariely"
+{:name=> "David Beckham", :cohort => :march},
+{:name=> "David Tennant", :cohort => :march},
+{:name=> "Vincent Gallo", :cohort => :march},
+{:name=> "Colin Firth", :cohort => :march},
+{:name=> "Johnny Depp", :cohort => :march},
+{:name=> "Dan Ariely", :cohort => :march}
 ]
 
-puts "The Students of my cohort at Makers Academy"
-puts "-------------------------------------------"	
-
-students.each do |student|
-	puts student
+def print_header
+	puts "The Students of my cohort at Makers Academy"
+	puts "-------------------------------------------"	
 end
 
-puts "Overall, we have #{students.length} great students"
+def print(students)
+students.each do |student|
+	puts "#{student[:name]} (#{student[:cohort]} cohort)"
+end
+end
+
+def print_footer(array)
+puts "Overall, we have #{array.length} great students"
+end
+
+#nothing happens until we call the methods:
+
+print_header
+print(students)
+print_footer(students)
 
