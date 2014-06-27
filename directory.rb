@@ -33,7 +33,14 @@ def print_list(students)
   end
 end
 
+def letter_a(students)
+	students.select do |student|
+		student[:name].chars.first == "A"
+	end
+end
+
 print_header
 students = input
+students = letter_a(students)
 print_list(students)
 print_footer(students)
