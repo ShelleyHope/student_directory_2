@@ -4,20 +4,22 @@ def print_header
 end
 
 def input
-	print "Please enter the names of the students:\n"
-	print "To finish, just hit return twice.\n"
+	print "Firstly,please enter the name(s) of the student, then hit return and enter their country of birth:\n"
+	print "To finish, just hit return three times.\n"
 	#create an empty array:
 	students = []
 	#get the first name:
 	name = gets.chomp
+	country_of_birth = gets.chomp
 	#while the name is not empty, repeat this code:
 	while !name.empty? do
 		#add the student hash to the array
-		students << {:name => name, :cohort => :march}
+		students << {:name => name, :country_of_birth => country_of_birth, :cohort => :march}
 		print "Now we have #{students.length} student(s).\n"
 		print "Please enter the next student name:\n"
 		#get another name from the user:
 		name = gets.chomp
+		country_of_birth = gets.chomp
 	end
 	#return the array of students
 	students
@@ -31,7 +33,7 @@ def print_list(students)
 	index = 0
 	n = students.length
 	while index < n
-  	print "#{index+1}. #{students[index][:name]} (#{students[index][:cohort]} cohort)\n"
+  	print "#{index+1}. #{students[index][:name]} #{students[index][:country_of_birth]}(#{students[index][:cohort]} cohort)\n"
   	index+=1
   end
 end
