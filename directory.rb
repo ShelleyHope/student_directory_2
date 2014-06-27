@@ -28,8 +28,8 @@ def print_footer(students)
 end
 
 def print_list(students)
-	students.each do |student|
-  	print "#{student[:name]} (#{student[:cohort]} cohort)\n"
+	students.each_with_index do |student, index|
+  	print "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)\n"
   end
 end
 
