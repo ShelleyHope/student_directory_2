@@ -1,11 +1,11 @@
 def print_header
-	puts "The students of my cohort:"
-	puts "--------------------------"
+	print "The students of my cohort:\n"
+	print "--------------------------\n"
 end
 
 def input
-	puts "Please enter the names of the students:"
-	puts "To finish, just hit return twice."
+	print "Please enter the names of the students:\n"
+	print "To finish, just hit return twice.\n"
 	#create an empty array:
 	students = []
 	#get the first name:
@@ -14,8 +14,8 @@ def input
 	while !name.empty? do
 		#add the student hash to the array
 		students << {:name => name, :cohort => :march}
-		puts "Now we have #{students.length} student(s)."
-		puts "Please enter the next student name:"
+		print "Now we have #{students.length} student(s).\n"
+		print "Please enter the next student name:\n"
 		#get another name from the user:
 		name = gets.chomp
 	end
@@ -23,17 +23,17 @@ def input
 	students
 end
 
-def print_footer(names)
-	puts "Overall, we have #{names.length} great students"
+def print_footer(students)
+	print "Overall, we have #{students.length} great students\n"
 end
 
-def print(students)
+def print_list(students)
 	students.each do |student|
-  	puts "#{student[:name]} (#{student[:cohort]} cohort)"
+  	print "#{student[:name]} (#{student[:cohort]} cohort)\n"
   end
 end
 
 print_header
 students = input
-print(students)
+print_list(students)
 print_footer(students)
