@@ -39,8 +39,15 @@ def letter_a(students)
 	end
 end
 
+def name_length(students)
+	students.select do |student|
+		student[:name].length < 12
+	end
+end
+
 print_header
 students = input
-students = letter_a(students)
+# students = letter_a(students)
+students = name_length(students)
 print_list(students)
 print_footer(students)
