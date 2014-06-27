@@ -33,7 +33,7 @@ def print_list(students)
 	index = 0
 	n = students.length
 	while index < n
-  	print "#{index+1}. #{students[index][:name]} #{students[index][:country_of_birth]}(#{students[index][:cohort]} cohort)\n"
+  	puts "#{index+1}. #{students[index][:name]} #{students[index][:country_of_birth]}(#{students[index][:cohort]} cohort)".center(120)
   	index+=1
   end
 end
