@@ -4,22 +4,24 @@ def print_header
 end
 
 def input
-	print "Firstly,please enter the name(s) of the student, then hit return and enter their country of birth:\n"
+	print "Firstly,please enter the name(s) of the student, then hit return and enter their cohort month and year (mm/yy):\n"
 	print "To finish, just hit return three times.\n"
 	#create an empty array:
 	students = []
+	acceptable_cohorts = ["11/13", "02/14", "03/14"]
 	#get the first name:
 	name = gets.chomp
-	country_of_birth = gets.chomp
+	cohort = gets.chomp
 	#while the name is not empty, repeat this code:
 	while !name.empty? do
 		#add the student hash to the array
-		students << {:name => name, :country_of_birth => country_of_birth, :cohort => :march}
+		cohort = "03/14" if cohort.empty? || !acceptable_cohorts.include?(cohort)
+		students << {:name => name, :cohort => cohort}
 		print "Now we have #{students.length} student(s).\n"
 		print "Please enter the next student name:\n"
 		#get another name from the user:
 		name = gets.chomp
-		country_of_birth = gets.chomp
+		cohort = gets.chomp
 	end
 	#return the array of students
 	students
@@ -49,6 +51,8 @@ def name_length(students)
 		student[:name].length < 12
 	end
 end
+
+
 
 print_header
 students = input
